@@ -1,9 +1,9 @@
 <?php
 
 class App {
-    protected $controller = 'Home';
-    protected $method = 'index';
-    protected $params = [];
+    protected $controller = 'Home'; //default controller
+    protected $method = 'index'; //default method
+    protected $params = []; //default params
     public function __construct()
     {
         $url = $this->parseURL();
