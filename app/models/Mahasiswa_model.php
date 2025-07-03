@@ -1,45 +1,6 @@
 <?php
 
     class Mahasiswa_model {
-/*         private $mhs = [
-            [
-                "nama" => "Nama mahasiswa",
-                "nim" => "Nim mahasiswa",
-                "email"=> "Email mahasiswa",
-                "jurusan"=> "Jurusan mahasiswa"
-            ],
-            [
-                "nama" => "Nama mahasiswa 02",
-                "nim" => "Nim mahasiswa 02",
-                "email"=> "Email mahasiswa 02",
-                "jurusan"=> "Jurusan mahasiswa 02"
-            ],
-            [
-                "nama" => "Nama mahasiswa 03",
-                "nim" => "Nim mahasiswa 03",
-                "email"=> "Email mahasiswa 03",
-                "jurusan"=> "Jurusan mahasiswa 03"
-            ],
-            ]; */
-
-            /*
-            //Dipindahkan ke core/Database.php
-            //Database Handler
-            private $dbh;
-            private $stmt;
-
-            public function __construct()
-            {
-                //Database Source Name
-                $dsn = 'mysql:host=localhost;dbname=mvc';
-
-                try {
-                    $this->dbh = new PDO($dsn, 'root', '');
-                } catch(PDOException $e) {
-                    die($e->getMessage());
-                } 
-            } */
-
             private $table = 't_mahasiswa';
             private $db;
 
@@ -50,12 +11,6 @@
 
             public function getAllMahasiswa()
             {
-                /*
-                $this->stmt = $this->dbh->prepare('select * from t_mahasiswa');
-                $this->stmt->execute();
-                //return $this->mhs;
-                return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
-                */
                 $this->db->query('SELECT * FROM ' . $this->table);
                 return $this->db->resultSet();
             }
