@@ -3,7 +3,7 @@
     class Mahasiswa extends Controller{
         public function index()
         {
-            //echo 'mahasiswa/index';
+            // 'mahasiswa/index';
             $data['judul_halaman'] = 'Mahasiswa Index';
             $data['mhs'] = $this->model('Mahasiswa_model')->getAllMahasiswa();
             $this->view('templates/header', $data);
@@ -13,7 +13,7 @@
 
         public function detail($id)
         {
-            //echo 'mahasiswa/index';
+            // 'mahasiswa/detail';
             $data['judul_halaman'] = 'Mahasiswa Detail';
             $data['mhs'] = $this->model('Mahasiswa_model')->getMahasiswaById($id);
             $this->view('templates/header', $data);
@@ -78,8 +78,8 @@
 
         public function cari()
         {
-            //echo 'mahasiswa/index';
-            $data['judul_halaman'] = 'Mahasiswa Index';
+            // 'mahasiswa/index';
+            $data['judul_halaman'] = 'Mahasiswa Index Cari';
             $data['mhs'] = $this->model('Mahasiswa_model')->cariDataMahasiswa();
             $this->view('templates/header', $data);
             $this->view('mahasiswa/index', $data);

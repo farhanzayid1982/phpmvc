@@ -72,8 +72,14 @@
 
             public function cariDataMahasiswa()
             {
-                $keyword = $_POST['txtkeyword'];
+                if (!isset($_POST['txtkeyword']) || empty($_POST['txtkeyword'])) {
+                    $keyword = '';
+                } else {
+                    $keyword = $_POST['txtkeyword'];
+                }
+                
                 $query = "SELECT * FROM t_mahasiswa WHERE nama LIKE :keyword or nim LIKE :keyword or jurusan LIKE :keyword";
+                
                 $this->db->query($query);
                 $this->db->bind('keyword', "%$keyword%");
                 return $this->db->resultSet();
